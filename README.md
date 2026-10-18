@@ -86,9 +86,9 @@ docker rm workshop-app
 1. Create or sign in to an account at [Docker Hub](https://hub.docker.com/). Use your **Docker ID / username**, not your email or display name.
 2. Choose **Repositories → Create repository**, select your personal namespace, name it **workshop-app**, and choose **Public** so students can pull without accounts.
 3. Open Docker account settings at [Docker Home](https://app.docker.com/) → **Personal access tokens → Generate new token** (some menus place this under security). Give it a workshop description, an appropriate expiration, and **Read & Write** permissions; Delete is unnecessary. Copy it once and keep it secure. See [Docker's access-token guide](https://docs.docker.com/security/access-tokens/).
-4. In your **GitHub repository**, open **Settings → Secrets and variables → Actions**.
-5. Under **Variables**, add a repository variable named **DOCKERHUB_USERNAME** with your lowercase Docker Hub username.
-6. Under **Secrets**, add a repository secret named **DOCKERHUB_TOKEN** with the access token. Never put it in HTML, YAML, a shell command, a commit, or a screenshot. These are **GitHub Actions** settings, not cloud development environment variables.
+4. In your **GitHub repository**, open **Settings → Environments → test**. Create the environment named `test` if it does not exist. The publishing job selects it with `environment: test`; the CI job does not access this environment.
+5. Under **Environment variables**, add **DOCKERHUB_USERNAME** with your lowercase Docker Hub username.
+6. Under **Environment secrets**, add **DOCKERHUB_TOKEN** with the access token. Never put it in HTML, YAML, a shell command, a commit, or a screenshot. These are **GitHub Actions** settings, not cloud development environment variables. Existing repository-level values can also be used; a value in `test` takes precedence over the same name at repository level. If `test` requires approvals or restricts branches, publishing waits for approval or must satisfy those rules. Allow `main` for this workshop.
 7. Enable Actions if necessary (forks may show **Actions → I understand my workflows, go ahead and enable them**). Commit the project on a branch and merge a pull request into `main`, or push your prepared `main` branch if repository rules permit:
 
    ```text
@@ -196,7 +196,7 @@ Visit ports 8081 and 8082. Cleanup only these demos: `docker rm -f workshop-v1 w
 | Port 8080 is allocated | Use `docker ps` to identify the owner. Stop only your demo, or use another host port in a manual command. |
 | Name already in use / helper refuses replacement | Inspect `docker inspect workshop-app`. The helper requires the workshop label. Remove or rename an older demo yourself only after identifying it. |
 | Pull access denied / repository not found | Replace `yourname`, create a Public `workshop-app` repository, and confirm CD succeeded and the tag exists. |
-| Docker Hub unauthorized in Actions | Username must be a repository **variable**, token a repository **secret** with Write permission. Check expiry and namespace. |
+| Docker Hub unauthorized in Actions | In the `test` environment, username must be an environment **variable**, token an environment **secret** with Write permission. Check expiry and namespace. |
 | No Actions run or Run workflow button | Enable Actions, put the workflow on `main`, and check repository Actions policies and branch filters. PRs never publish. |
 | Red CI | Read the first failing step, build output, and container logs. CI failure intentionally blocks CD. |
 | Green CI, red CD | Registry configuration can fail independently of application tests. Read the error and correct GitHub settings. |

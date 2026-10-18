@@ -48,6 +48,7 @@ jobs:
 
   publish:
     name: CD — Publish to Docker Hub
+    environment: test
     needs: ci
     if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
     runs-on: ubuntu-latest
@@ -64,7 +65,7 @@ jobs:
           DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
         run: |
           if [[ -z "$DOCKERHUB_USERNAME" || -z "$DOCKERHUB_TOKEN" ]]; then
-            echo '::error::Set the DOCKERHUB_USERNAME repository variable and DOCKERHUB_TOKEN repository secret. See README.md.'
+            echo '::error::Set the DOCKERHUB_USERNAME variable and DOCKERHUB_TOKEN secret in the test GitHub environment. See README.md.'
             exit 1
           fi
 
