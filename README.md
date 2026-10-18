@@ -38,11 +38,7 @@ Windows students do not need Bash for this walkthrough. If `bash` reports a WSL 
 
 ### Before you start
 
-> **Git/GitHub and Bash setup — only if needed:** Follow the setup guidance below only if you have not configured these tools yet. If you already have Git and your terminal ready, skip setup and go straight to **Part 1 — Build and run locally**. If you only want to run the instructor's published image, skip Git/GitHub and Bash setup entirely and go to **Part 2 — Run the published Docker Hub image**. You still need Docker installed and running.
-
 Install [Git](https://git-scm.com/downloads) and [Docker Desktop](https://docs.docker.com/desktop/). Start Docker Desktop and wait for the engine to be running. On Windows, select **Linux containers**. On macOS, install the edition for your processor: Intel or Apple Silicon. Linux users can use Docker Engine with Buildx.
-
-If you want Bash on Windows, the Git for Windows installer includes **Git Bash**. This is optional: PowerShell or CMD works for the student commands. A GitHub account and Git authentication are only needed if you plan to push your own changes; cloning this public repository does not require signing in. If you are setting up GitHub for the first time, follow [GitHub's getting-started guide](https://docs.github.com/en/get-started/start-your-journey).
 
 You do not need a Docker Hub account or the instructor's token to pull the **public** workshop image. Your instructor needs an account to publish it. Anonymous pulls have rate limits; an optional Docker login may help a class sharing one network.
 
@@ -460,24 +456,3 @@ Dockerfile                   Official Nginx + copied HTML
 .dockerignore                Minimal build context
 WORKSHOP.md                  Instructor phases and exercises
 ```
-
-## After the workshop — learn about YAML
-
-Take a little time to learn **what a YAML file is** and how to read it. YAML is a text format for configuration; files can end in `.yml` or `.yaml`. Our GitHub Actions workflow, [`.github/workflows/ci-cd.yml`](.github/workflows/ci-cd.yml), uses YAML to describe when the pipeline runs, its jobs, and each job's steps.
-
-Pay attention to **indentation**: YAML uses spaces to show which settings belong together. In our workflow, look for `on` (triggers), `jobs`, `steps`, `uses` (an action), and `run` (a command).
-
-**Watch this video after the workshop:** [Workshop follow-up video on YouTube](https://www.youtube.com/watch?v=1uFVr15xDGg).
-
-For the workflow syntax, keep [GitHub's workflow reference](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions) handy.
-
-### Quick reference — run the instructor's published image
-
-**Run in Windows PowerShell/CMD or macOS/Linux Bash/Zsh:**
-
-```bash
-docker pull denisaemilia/workshop-app:latest
-docker run -d --name workshop-app --label com.from-code-to-container.workshop=true -p 127.0.0.1:8080:80 denisaemilia/workshop-app:latest
-```
-
-If your previous `workshop-app` demo still exists, remove only that demo with `docker rm -f workshop-app` after the pull succeeds and before running the new container. Then open `http://localhost:8080`.
