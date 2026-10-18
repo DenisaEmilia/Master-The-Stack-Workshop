@@ -1,0 +1,4 @@
+# Only the Dockerfile and the page are needed in the build context.
+**
+!Dockerfile
+!index.html

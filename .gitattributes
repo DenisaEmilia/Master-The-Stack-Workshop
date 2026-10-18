@@ -1,0 +1,3 @@
+* text=auto
+# Keep Bash runnable even when cloning with Windows core.autocrlf enabled.
+*.sh text eol=lf

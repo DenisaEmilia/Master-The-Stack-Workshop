@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A small workshop about taking HTML from Git to a running Docker container.">
+  <title>From Code to Container</title>
+  <style>
+    :root {
+      /* WORKSHOP EDIT 1: change #2563eb (blue) to #15803d (green). */
+      --primary: #2563eb;
+      --ink: #17243b;
+      --muted: #526077;
+      --paper: #f2f5fb;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: system-ui, sans-serif; line-height: 1.6; }
+    main { max-width: 960px; margin: auto; padding: 48px 24px; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .16em; font-size: .75rem; font-weight: 750; }
+    header { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 24px; }
+    .edition { color: var(--muted); font-size: .85rem; }
+    .hero { position: relative; overflow: hidden; padding: clamp(28px, 6vw, 64px); border-radius: 24px; background: var(--primary); color: white; }
+    .hero::after { content: ""; position: absolute; width: 260px; height: 260px; border: 48px solid #ffffff12; border-radius: 50%; right: -100px; bottom: -120px; pointer-events: none; }
+    h1 { max-width: 650px; font-size: clamp(2.4rem, 7vw, 4.4rem); line-height: 1.08; letter-spacing: -.055em; margin: 20px 0; }
+    #app-version { display: inline-block; padding: 5px 14px; border: 1px solid #ffffff80; border-radius: 999px; font-weight: 700; }
+    #app-message { font-size: clamp(1.1rem, 3vw, 1.45rem); margin-bottom: 24px; }
+    .hero p:last-child { max-width: 560px; opacity: .9; }
+    section { margin-top: 28px; padding: 28px; border: 1px solid #dde3ed; border-radius: 20px; background: white; }
+    h2 { margin: 0 0 12px; font-size: 1.2rem; letter-spacing: -.025em; }
+    p { margin: 0 0 12px; }
+    section p:last-child { margin-bottom: 0; }
+    .status { display: flex; align-items: flex-start; gap: 14px; }
+    .dot { width: 12px; height: 12px; flex-shrink: 0; background: var(--primary); border-radius: 50%; margin-top: 10px; }
+    .muted { color: var(--muted); }
+    .journey { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 0; list-style: none; counter-reset: stops; }
+    .journey li { background: var(--paper); padding: 16px; border-radius: 12px; counter-increment: stops; }
+    .journey li::before { content: "0" counter(stops) " →"; display: block; margin-bottom: 12px; font-size: .8rem; font-weight: 700; color: var(--primary); }
+    .journey strong, .journey small { display: block; }
+    .journey small { color: var(--muted); margin-top: 4px; }
+    footer { margin-top: 24px; font-size: .85rem; color: var(--muted); text-align: center; }
+    @media (max-width: 600px) {
+      main { padding: 24px 16px; }
+      header { align-items: flex-start; flex-direction: column; gap: 4px; }
+      .journey { grid-template-columns: repeat(2, 1fr); }
+      section { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <span class="eyebrow">Master the Stack / Workshop</span>
+      <span class="edition">One page. The whole delivery journey.</span>
+    </header>
+    <div class="hero">
+      <!-- WORKSHOP EDIT 2: change Version 1 to Version 2. -->
+      <span id="app-version">Version 1</span>
+      <h1>From Code to Container</h1>
+      <!-- WORKSHOP EDIT 3: use Hello from Version 2! My pipeline works! -->
+      <p id="app-message">Hello from Version 1!</p>
+      <p>A small HTML file with a big journey. Follow your code from a commit to an image, then bring that image to life.</p>
+    </div>
+    <section class="status" aria-labelledby="status-title">
+      <span class="dot" aria-hidden="true"></span>
+      <div>
+        <h2 id="status-title">Deployment status</h2>
+        <p>When run with Docker, this page is served by Nginx from a Docker container.</p>
+        <p class="muted">This version is baked into the image. Publishing or pulling a new image leaves your running container unchanged. Recreate the container to deploy it.</p>
+      </div>
+    </section>
+    <section aria-labelledby="journey-title">
+      <h2 id="journey-title">Follow the delivery journey</h2>
+      <ol class="journey">
+        <li><strong>Git</strong><small>Save your change</small></li>
+        <li><strong>GitHub Actions</strong><small>Validate, build, test</small></li>
+        <li><strong>Docker Hub</strong><small>Publish the image</small></li>
+        <li><strong>Container</strong><small>Run your version</small></li>
+      </ol>
+    </section>
+    <footer>Edit → Commit → Test → Publish → Pull → Recreate</footer>
+  </main>
+</body>
+</html>

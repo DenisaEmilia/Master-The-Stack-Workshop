@@ -1,0 +1,116 @@
+name: From Code to Container
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Avoid simultaneous publishing runs for the same branch.
+concurrency:
+  group: workshop-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  ci:
+    name: CI — Validate, build, and test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out the source
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Validate application files, heading, and version
+        run: bash scripts/validate.sh
+
+      - name: Build the test image
+        run: docker build --tag workshop-app:ci .
+
+      - name: Start a temporary container
+        run: docker run --detach --name workshop-ci --publish 127.0.0.1:8080:80 workshop-app:ci
+
+      - name: Wait for Nginx and smoke test the HTTP response
+        run: bash scripts/smoke-test.sh http://localhost:8080
+
+      - name: Show container logs on failure
+        if: failure()
+        run: docker logs workshop-ci || true
+
+      - name: Remove the temporary container
+        if: always()
+        run: docker rm --force workshop-ci || true
+
+  publish:
+    name: CD — Publish to Docker Hub
+    needs: ci
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out the tested source
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Check publishing configuration
+        env:
+          DOCKERHUB_USERNAME: ${{ vars.DOCKERHUB_USERNAME }}
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+        run: |
+          if [[ -z "$DOCKERHUB_USERNAME" || -z "$DOCKERHUB_TOKEN" ]]; then
+            echo '::error::Set the DOCKERHUB_USERNAME repository variable and DOCKERHUB_TOKEN repository secret. See README.md.'
+            exit 1
+          fi
+
+      - name: Enable ARM64 builds for Apple Silicon
+        uses: docker/setup-qemu-action@v4
+        with:
+          platforms: arm64
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      - name: Authenticate to Docker Hub
+        uses: docker/login-action@v4
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Generate latest and commit tags
+        id: metadata
+        uses: docker/metadata-action@v6
+        with:
+          images: ${{ vars.DOCKERHUB_USERNAME }}/workshop-app
+          tags: |
+            type=raw,value=latest
+            type=sha,format=short,prefix=sha-
+
+      - name: Build and publish AMD64 and ARM64 images
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ steps.metadata.outputs.tags }}
+          labels: ${{ steps.metadata.outputs.labels }}
+
+      - name: Summarize published images
+        env:
+          PUBLISHED_TAGS: ${{ steps.metadata.outputs.tags }}
+          IMAGE_NAME: ${{ vars.DOCKERHUB_USERNAME }}/workshop-app
+        run: |
+          {
+            echo '## Published to Docker Hub'
+            echo "Image: $IMAGE_NAME"
+            echo 'Platforms: linux/amd64, linux/arm64'
+            echo '```text'
+            echo "$PUBLISHED_TAGS"
+            echo '```'
+            echo 'Publishing delivers an image. Pull and recreate a container to deploy it.'
+          } >> "$GITHUB_STEP_SUMMARY"
