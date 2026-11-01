@@ -1,5 +1,7 @@
 # From Code to Container
 
+> **Looking for the Docker Compose lab?** On the `feature/docker-compose-lab` branch, follow the [step-by-step student guide](exercises/docker-compose/README.md) to run the frontend and backend together. The original single-container workshop continues below.
+
 A beginner workshop about **HTML source → GitHub → CI → Docker image → Docker Hub → a running application**. Change three lines, watch the pipeline, and see why publishing a new image does not update a running container.
 
 The stack is HTML5, embedded CSS3, official Nginx Alpine, Docker, GitHub Actions, Docker Hub, Bash, and PowerShell. No package manager, backend, database, or JavaScript dependencies. The starting page is **Version 1**, blue, with **Hello from Version 1!**
