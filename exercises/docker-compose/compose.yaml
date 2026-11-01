@@ -1,0 +1,19 @@
+services:
+  web:
+    build: ./web
+    ports:
+      - "127.0.0.1:8080:80"
+    depends_on:
+      api:
+        condition: service_healthy
+
+  api:
+    build: ./api
+    environment:
+      WELCOME_MESSAGE: "${WELCOME_MESSAGE:-Hello from the backend!}"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5000/health', timeout=2)"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+      start_period: 5s

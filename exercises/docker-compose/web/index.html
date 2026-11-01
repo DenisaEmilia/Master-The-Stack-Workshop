@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Master the Stack — Docker Compose Lab</title>
+  <style>
+    :root { --primary: #2563eb; --ink: #17243b; --muted: #526077; --paper: #f2f5fb; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: system-ui, sans-serif; line-height: 1.6; }
+    main { max-width: 960px; margin: auto; padding: 48px 24px; }
+    header { margin-bottom: 24px; font-size: .75rem; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; }
+    .hero { padding: clamp(28px, 6vw, 56px); background: var(--primary); border-radius: 24px; color: white; }
+    .badge { display: inline-block; border: 1px solid #ffffff80; padding: 5px 14px; border-radius: 999px; font-weight: 700; }
+    h1 { font-size: clamp(2.4rem, 7vw, 4rem); line-height: 1.1; letter-spacing: -.05em; margin: 22px 0; }
+    h2 { margin: 0 0 12px; font-size: 1.25rem; }
+    p { margin: 0 0 16px; }
+    section { margin-top: 24px; padding: 28px; border: 1px solid #dde3ed; border-radius: 20px; background: white; }
+    button { font: inherit; font-weight: 700; color: white; background: var(--primary); border: 0; border-radius: 10px; padding: 12px 22px; cursor: pointer; }
+    button:hover { background: #1d4ed8; }
+    button:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
+    button:disabled { opacity: .65; cursor: wait; }
+    #response { margin: 20px 0 0; padding: 16px; border-radius: 12px; background: var(--paper); overflow-wrap: anywhere; }
+    #response[data-state="success"] { color: #166534; background: #f0fdf4; }
+    #response[data-state="error"] { color: #991b1b; background: #fef2f2; }
+    .journey { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 0 0 16px; padding: 0; list-style: none; }
+    .journey li { padding: 10px 16px; background: var(--paper); border-radius: 10px; font-weight: 650; }
+    .journey li + li::before { content: "→ "; color: var(--primary); }
+    .muted, footer { color: var(--muted); }
+    code { font-size: .95em; }
+    footer { margin-top: 24px; text-align: center; font-size: .85rem; }
+    @media (max-width: 600px) { main { padding: 24px 16px; } section { padding: 22px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>Master the Stack / Workshop</header>
+    <div class="hero">
+      <span class="badge">Docker Compose Lab</span>
+      <h1>Two containers.<br>One conversation.</h1>
+      <p>Use one Compose file to run a frontend and a Python backend together.</p>
+    </div>
+    <section aria-labelledby="try-title">
+      <h2 id="try-title">Say hello to the backend</h2>
+      <p class="muted">Click below to send a request through Nginx to the API container.</p>
+      <button id="contact" type="button">Contact Backend</button>
+      <p id="response" role="status" aria-live="polite" data-state="idle">Ready when you are. Contact the backend to see its message.</p>
+    </section>
+    <section aria-labelledby="journey-title">
+      <h2 id="journey-title">Follow the request</h2>
+      <ol class="journey">
+        <li>Browser :8080</li>
+        <li>Nginx · web :80</li>
+        <li>Python · api :5000</li>
+      </ol>
+      <p class="muted">Your browser calls <code>/api/message</code>. Nginx forwards it to <code>api:5000/message</code> on the private Compose network.</p>
+      <p class="muted">Only the frontend has a host port. Docker resolves the service name <code>api</code> inside the network.</p>
+    </section>
+    <footer>Start → Contact → Stop the API → Try again → Recover</footer>
+  </main>
+  <script>
+    const button = document.querySelector('#contact');
+    const output = document.querySelector('#response');
+
+    button.addEventListener('click', async () => {
+      button.disabled = true;
+      output.dataset.state = 'loading';
+      output.textContent = 'Contacting the backend…';
+      try {
+        const response = await fetch('/api/message', { cache: 'no-store' });
+        if (!response.ok) throw new Error('Backend request failed');
+        const data = await response.json();
+        if (typeof data.message !== 'string') throw new Error('Unexpected response');
+        output.dataset.state = 'success';
+        output.textContent = data.message;
+      } catch {
+        output.dataset.state = 'error';
+        output.textContent = 'We could not reach the backend. It may be stopped. Start the api service and click Contact Backend again.';
+      } finally {
+        button.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
