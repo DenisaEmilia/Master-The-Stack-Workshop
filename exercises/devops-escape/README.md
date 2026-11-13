@@ -77,7 +77,19 @@ git commit --allow-empty -m "Start escape room"
 git push
 ```
 
-The workflow also supports `workflow_dispatch`, but GitHub normally shows **Run workflow** only when the workflow exists on the default branch. This new workflow isn't on `main`; **use the branch push above** rather than merging just to obtain a button.
+### Start a run manually for your branch
+
+The workflow is registered on `main` so GitHub can display the manual-run menu. To test without another commit:
+
+1. Open **Actions → DevOps Escape Room**.
+2. Click **Run workflow**.
+3. In **Use workflow from / Branch**, select your personal branch, or select `feature/devops-escape-room` to demonstrate the starter. For example, an instructor test branch such as `feature/Denisa-model` also works when it contains the exercise and workflow.
+4. Click the green **Run workflow** button.
+5. Open the new run and expand **Escape the eight gates**.
+
+The selected branch must contain `.github/workflows/devops-escape-room.yml` with `workflow_dispatch` and the exercise files. Student branches created from the prepared starter have both. Select an exercise branch rather than `main`: `main` only registers the workflow and shows branch-selection guidance when run directly. No merge is needed. Automatic runs on `escape/**` pushes remain available too.
+
+**Re-run all jobs** repeats the original run's commit. To test the latest changes on a branch, commit/push those changes, then use **Run workflow** and select that branch again.
 
 ### Alternative: work entirely through the GitHub website
 
