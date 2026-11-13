@@ -2,20 +2,22 @@
 
 ## No workflow run appears
 
-- Check `git branch --show-current`. The branch must start with `escape/`, such as `escape/team-alpha`, to match `escape/**`. The prepared `feature/devops-escape-room` branch itself does not automatically trigger a run.
-- Check `git remote -v`: push to the team's fork (`origin`), not the instructor's repository. Git pushes require permission; a successful clone proves only read access.
-- In the fork's **Actions** tab, enable Actions before pushing. After enabling it, push another commit (an empty “Start escape room” commit is sufficient).
-- Confirm your branch contains `.github/workflows/devops-escape-room.yml`. Forks often copy only `main`; follow the README's `upstream` fetch to obtain the prepared starter.
+- Check `git branch --show-current`. The branch must start with `escape/`, such as `escape/alex-popescu`, to match `escape/**`. The prepared `feature/devops-escape-room` branch itself does not automatically trigger a run.
+- Check `git remote -v`: `origin` must point to the shared `DenisaEmilia/Master-The-Stack-Workshop` repository. Students need collaborator write access and must accept their invitation. A successful clone proves only read access; a denied push is not a pipeline defect.
+- The instructor enables Actions in the shared repository before class. After it is enabled, push another commit on your own branch (an empty “Start escape room” commit is sufficient for local Git users).
+- Confirm your branch contains `.github/workflows/devops-escape-room.yml`. Start personal branches from `feature/devops-escape-room`, not `main`. If a browser-created branch has no run, make a first file commit directly on that personal branch.
 - A workflow YAML parse error may appear in the commit's checks instead of as a normal job. Restore the recipe from the prepared starter and keep indentation with spaces. The intentionally broken files are artifacts/runtime configuration, not the workflow YAML.
 - Organization policy may block Actions, official actions, or hosted runners. Ask the repository/organization administrator for the specific required access; no Docker Hub secret fixes those restrictions.
 
 ## No “Run workflow” button
 
-Manual `workflow_dispatch` requires GitHub to register the workflow on the repository's default branch. Upstream `main` doesn't contain this new workflow. Use an `escape/**` push; do not merge into upstream `main` just to get a button. A disposable team fork can use the prepared starter as its default if its owner chooses.
+Manual `workflow_dispatch` requires GitHub to register the workflow on the repository's default branch. `main` doesn't contain this new workflow. Use a push or a browser file commit on your personal `escape/**` branch; do not merge into `main` or change the default branch just to get a button.
 
 ## The wrong workflow or old code is running
 
 Choose **DevOps Escape Room**, not **From Code to Container**. Compare the run's branch and SHA with `git log -1`. Rerunning a failed run uses that old commit; make a repair commit and push for new source to be tested. Uncommitted laptop edits cannot change the runner's files. The original publishing workflow is unchanged and is not triggered by an `escape/**` push.
+
+All students' runs appear in the same Actions list. Filter by your own branch and check its latest commit. A different student's red run does not mean your fix failed. If you edited through GitHub's website, check the branch dropdown before every commit, and pull those commits before continuing locally.
 
 ## Docker daemon unavailable locally
 

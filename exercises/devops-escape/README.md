@@ -6,29 +6,45 @@ The release is trapped. A rubber duck refuses to approve it, Captain Dockerbeard
 
 ## Before starting
 
-- Install [Git](https://git-scm.com/downloads) and have a GitHub account.
-- Use PowerShell or CMD on Windows, or Terminal/Bash/Zsh on macOS/Linux.
-- Use your own fork (one per team), with Actions enabled and permission to push.
+- Have a GitHub account. For local work, install [Git](https://git-scm.com/downloads); browser-only students can use the GitHub editor route below instead.
+- For local work, use PowerShell or CMD on Windows, or Terminal/Bash/Zsh on macOS/Linux.
+- Work individually in `DenisaEmilia/Master-The-Stack-Workshop`, using your own uniquely named `escape/<your-name>` branch. No teams or forks are needed.
+- Accept the instructor's collaborator invitation first: a public repository can be cloned by anyone, but creating branches and pushing requires write access.
 - Docker Desktop is recommended for investigating Docker/HTTP failures locally. It is **not required** to participate: GitHub-hosted Ubuntu has Docker, Bash, Python, and curl.
 - Keep an editor ready, and save text/JSON as UTF-8. JSON uses double quotes, has no comments, and does not permit trailing commas.
 
 Already did the original workshop? Save any unfinished work there first. This exercise uses a **different branch** and its own folder. If the original demo or Compose lab is using port 8080, stop only your own demo before running this escape room locally. CI runs on a separate machine and is unaffected by ports on your laptop.
 
-## 1. Fork and obtain the prepared starter
+## 1. Create your personal branch from the prepared starter
 
-On GitHub, open `DenisaEmilia/Master-The-Stack-Workshop`, click **Fork**, and create your team's fork. If offered **Copy the main branch only**, uncheck it so the prepared feature branch is included. Each team should have a separate fork to avoid editing another team's answers.
+Everyone works in the same repository, but each student keeps their own answers on a separate branch. Start from **feature/devops-escape-room**, not `main` or another student's branch. Keep the prepared starter unchanged for the next student.
 
-**Replace `YOUR_GITHUB_USERNAME` with your actual GitHub username.** From a folder where you keep projects, run the following in PowerShell, CMD, Bash, or Zsh:
+**If you have not cloned the workshop yet**, run the following in PowerShell, CMD, Bash, or Zsh:
 
 ```text
-git clone https://github.com/YOUR_GITHUB_USERNAME/Master-The-Stack-Workshop.git
+git clone https://github.com/DenisaEmilia/Master-The-Stack-Workshop.git
 cd Master-The-Stack-Workshop
-git remote add upstream https://github.com/DenisaEmilia/Master-The-Stack-Workshop.git
-git fetch upstream feature/devops-escape-room
-git switch -c escape/team-alpha FETCH_HEAD
 ```
 
-Choose your own team name after `escape/`, such as `escape/team-duck`. The fetch selects the instructor's prepared starter even if your fork copied only `main`. `origin` remains your fork; `upstream` is the instructor's source. For an existing clone, inspect `git status` and `git remote -v` first; don't blindly add an already-configured remote or discard old work. If your team branch already exists, switch to it rather than recreating it.
+**If you already completed the earlier workshop**, open a terminal in your existing `Master-The-Stack-Workshop` folder instead. Do not clone inside that folder again.
+
+**Check before switching:**
+
+```text
+git status
+git remote -v
+```
+
+Save any unfinished work in a commit or stash before switching. `origin` should point to `DenisaEmilia/Master-The-Stack-Workshop`; if you are using a different repository, use a fresh checkout as shown above. Do not discard old work or change another student's branch.
+
+**With a clean working tree, fetch the prepared branch and create your own:**
+
+```text
+git fetch origin feature/devops-escape-room
+git switch -c escape/your-name FETCH_HEAD
+```
+
+Replace `your-name` with your own unique name or GitHub username, for example `escape/alex-popescu`. Use that same branch name in every command below. The `escape/` prefix is required to trigger the pipeline. If your branch already exists, switch to it with `git switch escape/your-name` to continue your attempt; don't overwrite it or recreate it from the starter.
 
 **Verify the branch:**
 
@@ -36,30 +52,42 @@ Choose your own team name after `escape/`, such as `escape/team-duck`. The fetch
 git branch --show-current
 ```
 
-Expected: `escape/team-alpha` (or your chosen team name).
+Expected: `escape/your-name` with your actual name substituted.
 
 **Why two names?** `feature/devops-escape-room` is the prepared instructor branch. Your `escape/**` branch is where you solve missions, and its name triggers the pipeline. Do not push your fixes to `main` or open a PR to `main` during the game; that belongs to the original delivery workshop.
 
 ## 2. Start the first run
 
-In **your fork's Actions tab**, enable GitHub Actions if GitHub asks. Do this before pushing. Then:
+The instructor enables Actions in the shared repository. **Publish only your personal branch:**
 
 ```text
-git push -u origin escape/team-alpha
+git push -u origin escape/your-name
 ```
 
-Use your actual team branch in place of `escape/team-alpha`. GitHub may ask you to authenticate for this Git push; use your configured GitHub login/Git credential manager. Never paste tokens into a repository file.
+Use your actual personal branch in place of `escape/your-name`. GitHub may ask you to authenticate for this Git push; use your configured GitHub login/Git credential manager. Never paste tokens into a repository file. If GitHub rejects the push for lack of permission, ask the instructor to check your collaborator access; no Docker Hub credentials are involved.
 
-Open your fork on GitHub → **Actions → DevOps Escape Room** → the run for your team branch → **Escape the eight gates** → **Gate 1 — The Missing Artifact**.
+Open [the shared repository's Actions tab](https://github.com/DenisaEmilia/Master-The-Stack-Workshop/actions) → **DevOps Escape Room** → filter by **your branch** → select the latest run → **Escape the eight gates** → **Gate 1 — The Missing Artifact**. Other students' red/green runs are separate attempts; compare the branch and commit SHA before reading logs.
 
-**Expected first result:** Gate 1 is red because `deployment-info.json` is missing. Gates 2–8 are skipped. The run summary reports **0/8 completed** and **Gate 01** as the first failure. If you enabled Actions after your first push, push a new commit to trigger a fresh run:
+**Expected first result:** Gate 1 is red because `deployment-info.json` is missing. Gates 2–8 are skipped. The run summary reports **0/8 completed** and **Gate 01** as the first failure. If no run appears after the instructor enables Actions, push a new commit on your personal branch:
 
 ```text
 git commit --allow-empty -m "Start escape room"
 git push
 ```
 
-The workflow also supports `workflow_dispatch`, but GitHub normally shows **Run workflow** only when the workflow exists on the fork's default branch. This new workflow isn't on upstream `main`; **use the branch push above** rather than merging just to obtain a button.
+The workflow also supports `workflow_dispatch`, but GitHub normally shows **Run workflow** only when the workflow exists on the default branch. This new workflow isn't on `main`; **use the branch push above** rather than merging just to obtain a button.
+
+### Alternative: work entirely through the GitHub website
+
+If the instructor asks you to use GitHub's editor instead of local Git, follow this route rather than repeating the local branch-creation steps:
+
+1. Open the repository's **Code** tab and select `feature/devops-escape-room` in the branch dropdown.
+2. In that dropdown, enter your unique `escape/your-name` name and create the branch **from feature/devops-escape-room**.
+3. Confirm the dropdown shows your personal branch. Create a small `exercises/devops-escape/student-notes.txt` file with a sentence about starting your attempt, and commit it directly to **your branch**. Creating a branch alone may not produce a run; this first file commit triggers the push workflow while leaving Gate 1 broken.
+4. Open **Actions**, filter by your branch, and inspect the first red gate.
+5. Create or edit that mission's file with GitHub's editor, then choose **Commit changes** directly to your personal branch. Each new commit triggers another pipeline. Do not choose another student's branch, `main`, the prepared starter, or a pull request for your repairs.
+
+This browser route needs the same collaborator write access, but no local Git, Docker, or Bash installation. If alternating between browser and local edits, run `git pull --ff-only` on your personal local branch before editing to bring down the browser commits; resolve any divergence without force-pushing over work.
 
 ## 3. Inspect your mission files
 
@@ -150,7 +178,7 @@ docker image ls escape-room
 
 The build initially fails at Mission 3's intentional defect. Building an image alone does not run the full game. Gate 4 leaves a container available for Gate 5 within the same run; `run-local.sh` cleans it up afterward. Directly running individual gates requires the earlier Docker gates' prerequisites and manual cleanup via `bash scripts/cleanup.sh` from the exercise directory in a Bash-capable environment.
 
-The exercise's official Nginx base is pinned to a manifest digest so teams start from the same base image. Keep that `FROM` line while investigating the broken `COPY` instruction.
+The exercise's official Nginx base is pinned to a manifest digest so everyone starts from the same base image. Keep that `FROM` line while investigating the broken `COPY` instruction.
 
 ## 7. Victory
 
@@ -162,6 +190,6 @@ CONGRATULATIONS! YOU ESCAPED THE DEVOPS PIPELINE!
 
 The summary includes **8/8**, the run's commit SHA, and the verified local image tag `escape-room:v1.0.0`. This image exists on that runner, not on Docker Hub or automatically on your computer. GitHub's hosted machine is temporary. Local runs retain their challenge/release image tags, but remove their container.
 
-Explain to your partner why a successful build, a running container, HTTP 200, and a correct release are different checks. The duck will be listening.
+Explain to the instructor why a successful build, a running container, HTTP 200, and a correct release are different checks. The duck will be listening.
 
 Instructor solutions and regression-test fixes are in this repository for teaching. Treat those files as spoilers; use the mission hints first. See [instructor/SETUP.md](instructor/SETUP.md) for distribution/privacy guidance and [instructor/TROUBLESHOOTING.md](instructor/TROUBLESHOOTING.md) if platform/tool setup blocks you.
