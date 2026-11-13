@@ -193,5 +193,3 @@ CONGRATULATIONS! YOU ESCAPED THE DEVOPS PIPELINE!
 The summary includes **8/8**, the run's commit SHA, and the verified local image tag `escape-room:v1.0.0`. This image exists on that runner, not on Docker Hub or automatically on your computer. GitHub's hosted machine is temporary. Local runs retain their challenge/release image tags, but remove their container.
 
 Explain to the instructor why a successful build, a running container, HTTP 200, and a correct release are different checks. The duck will be listening.
-
-Instructor solutions and regression-test fixes are in this repository for teaching. Treat those files as spoilers; use the mission hints first. See [instructor/SETUP.md](instructor/SETUP.md) for distribution/privacy guidance and [instructor/TROUBLESHOOTING.md](instructor/TROUBLESHOOTING.md) if platform/tool setup blocks you.
