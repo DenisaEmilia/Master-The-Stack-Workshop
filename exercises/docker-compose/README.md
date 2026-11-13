@@ -1,170 +1,140 @@
-# Docker Compose lab — two containers, one conversation
+# Docker Compose lab — frontend and backend
 
-Run a webpage and a Python API together, then see how they communicate. This exercise is separate from the original workshop at the repository root. It does not change or publish that application.
+Start two containers, click a button, and test what happens when the backend stops.
 
-## Before you start
+## Git command reference
 
-Install [Git](https://git-scm.com/downloads) and [Docker Desktop](https://docs.docker.com/desktop/). Start Docker Desktop and wait for its engine (use Linux containers on Windows). Linux users can use Docker Engine with the Compose plugin. **Check your tools:**
+Reference only—follow the numbered lab steps below. No Git push is required to complete this lab.
 
-```text
+| Command | What it does |
+| --- | --- |
+| `git status` | Show your current branch and unfinished changes. |
+| `git fetch origin feature/docker-compose-lab:refs/remotes/origin/feature/docker-compose-lab` | Download the lab branch, including from a main-only clone. |
+| `git switch feature/docker-compose-lab` | Switch to the prepared lab branch. |
+| `git checkout feature/docker-compose-lab` | Older alternative for switching branches. |
+| `git branch --show-current` | Check which branch you are using. |
+| `git pull --ff-only origin feature/docker-compose-lab` | Update the lab branch without creating a merge commit. |
+| `git switch -c compose/your-name` | Optionally create a personal branch from the current lab for your own edits. Replace `your-name`. |
+| `git diff` | Review unstaged edits to tracked files. |
+| `git add compose.yaml` | Stage your message/configuration changes when run from the lab folder. |
+| `git commit -m "Change the backend message"` | Optionally save staged changes locally. |
+| `git stash push -u -m "Save previous workshop edits"` | Save unfinished work before switching branches. |
+| `git stash pop` | Restore the latest stash; resolve conflicts if Git reports any. |
+
+## Docker and Compose command reference
+
+Run **Compose commands from `exercises/docker-compose`**, where `compose.yaml` lives. `web` is the frontend service; `api` is the backend service.
+
+| Command | What it does |
+| --- | --- |
+| `docker version` | Check that the Docker engine is available. |
+| `docker compose version` | Check that Compose v2 is installed. |
+| `docker ps` | Show running containers, including older workshop demos. |
+| `docker stop workshop-app` | Stop the previous workshop demo if it is using port 8080. |
+| `docker compose config --quiet` | Validate the Compose configuration. |
+| `docker compose build` | Build both images without starting containers. |
+| `docker compose up -d --build` | Build and start both services in the background. |
+| `docker compose ps` | Show running lab services and published ports. |
+| `docker compose ps -a` | Include stopped lab containers. |
+| `docker compose logs web` | Show frontend/Nginx logs. |
+| `docker compose logs api` | Show Python backend logs. |
+| `docker compose logs -f` | Follow live logs; Ctrl+C stops following, not the containers. |
+| `docker compose stop api` | Stop only the backend. |
+| `docker compose start api` | Start the existing backend again. |
+| `docker compose up -d` | Apply configuration changes and recreate affected containers. |
+| `docker compose down` | Remove this lab's containers and network; keep images and files. |
+
+## Before starting
+
+- Install [Git](https://git-scm.com/downloads) and [Docker Desktop](https://docs.docker.com/desktop/).
+- Start Docker Desktop; select **Linux containers** on Windows. Linux users can use Docker Engine with the Compose plugin.
+- Use **PowerShell/CMD on Windows** or **Terminal with Bash/Zsh on macOS/Linux**. Shared Git/Docker commands below work in all of them.
+- No local Python installation, Docker Hub account, or GitHub Actions secrets are needed.
+
+## 1. Get the lab branch
+
+Check your tools:
+
+```bash
 git --version
 docker version
 docker compose version
 ```
 
-Use **PowerShell or CMD on Windows**, or **Terminal with Bash/Zsh on macOS/Linux**. All commands below work in those terminals unless a specific terminal is named. Python is installed inside the API image; you do not need Python on your computer. No account, token, or package installation is needed for this public-source exercise.
+**Expected:** Git and Compose versions, plus Docker Client and Server information.
 
-**Expected:** Git prints its version, Docker shows both Client and Server, and Compose prints a v2 version. Keep Docker Desktop running throughout the lab. Use `docker compose` (two words); you do not need the older `docker-compose` command.
+**Already cloned the original workshop?** Open your existing `Master-The-Stack-Workshop` folder and run `git status`. Save unfinished edits in a commit or stash before switching. With a clean working tree:
 
-## 1. Get the lab's feature branch
-
-**Choose one route, not both.** The lab is on `feature/docker-compose-lab`; cloning only `main` will not include it.
-
-### New checkout — recommended for students
-
-Open your terminal in a folder where you keep projects. **Run:**
-
-```text
-git clone --branch feature/docker-compose-lab --single-branch https://github.com/DenisaEmilia/Master-The-Stack-Workshop.git
-cd Master-The-Stack-Workshop
-```
-
-If a folder with that name already exists, use the existing-checkout route below, or choose a different parent folder for this fresh clone.
-
-### If you already cloned the original workshop
-
-Open a terminal in your existing `Master-The-Stack-Workshop` folder. **Check for your own changes first:**
-
-```text
-git status
-```
-
-If you have uncommitted edits from the earlier workshop, save your work in a commit before switching, or use a fresh checkout in another folder. Do not discard your changes to follow this lab.
-
-**With a clean working tree, run:**
-
-```text
+```bash
 git fetch origin feature/docker-compose-lab:refs/remotes/origin/feature/docker-compose-lab
 git switch feature/docker-compose-lab
 git pull --ff-only origin feature/docker-compose-lab
 ```
 
-The fetch downloads this branch even if your original clone fetched only `main`. The switch selects the local feature branch, creating it from the remote tracking branch if necessary. If Git reports diverging history, stop and ask the instructor rather than resetting or force-pulling.
+**New checkout instead?** From a folder where you keep projects:
 
-### Verify your branch
-
-```text
-git branch --show-current
+```bash
+git clone --branch feature/docker-compose-lab --single-branch https://github.com/DenisaEmilia/Master-The-Stack-Workshop.git
+cd Master-The-Stack-Workshop
 ```
 
-**Expected:** `feature/docker-compose-lab`.
+Choose one route, not both. Do not clone inside an existing copy of the repository.
 
-## 2. Enter the lab folder and check port 8080
+**Verify and enter the exercise:**
 
-**From the repository root, run:**
-
-```text
+```bash
+git branch --show-current
 cd exercises/docker-compose
 ```
 
-**Run every Compose command from this folder.** Compose reads `compose.yaml` here and builds from the `web` and `api` subfolders, rather than the original root Dockerfile.
+Expected branch: **`feature/docker-compose-lab`**. Run every remaining Compose command from this exercise folder.
 
-**Check for an earlier demo using port 8080:**
+## 2. Free port 8080
 
-```text
+```bash
 docker ps
 ```
 
-If your original `workshop-app` container is still using port 8080, stop only that demo:
+If your old `workshop-app` demo is still using port 8080:
 
-```text
+```bash
 docker stop workshop-app
 ```
 
-Skip that command if it is not running. Do not stop or remove unfamiliar containers. The Compose lab needs port 8080 free before starting.
+Skip that command if the demo is not running. Leave unrelated containers alone.
 
-## 3. Build and start both containers
+## 3. Build and start both services
 
-**Run:**
-
-```text
+```bash
+docker compose config --quiet
 docker compose up -d --build
-```
-
-- `compose` manages the services in one YAML file.
-- `up` creates the default network and the two containers.
-- `--build` builds the images from this exercise's Dockerfiles.
-- `-d` runs containers in the background; no new window opens.
-
-Compose waits for the API's health check before starting the frontend. The first build downloads the official Nginx Alpine and Python Alpine images and may take longer.
-
-**Verify the services:**
-
-```text
 docker compose ps
 ```
 
-**Expected:** two services, `web` and `api`, both running; `api` should be healthy. Their generated container names may look like `docker-compose-web-1` and `docker-compose-api-1`. Use the service names in the commands below; you do not need to type the generated names.
+**Expected:** `web` and `api` are running; `api` becomes healthy. The first build may take longer to download the base images. `web` publishes `127.0.0.1:8080`; `api` has no host port mapping.
 
-## 4. Open the frontend and contact the backend
+## 4. Open the frontend and click the button
 
-**Type this exact address in your browser, including `:8080`:**
+**Open:** `http://localhost:8080`.
 
-```text
-http://localhost:8080
-```
-
-Do not open `web/index.html` directly: this lab needs Nginx to forward the API requests. Open the localhost page, then click **Contact Backend**.
+Click **Contact Backend**.
 
 **Expected:** `Hello from the backend!`
 
-### What just happened?
+The request travels **browser → Nginx (`web`) → Python (`api`) → browser**. Open the localhost page, not `web/index.html` directly.
 
-```text
-Browser: http://localhost:8080/api/message
-  → web (Nginx, port 80): forwards /api/message as /message
-    → api (Python, port 5000): returns JSON
-      → Nginx → browser: displays the message
-```
+Optional: open your browser's **Inspect → Network** panel and click again. The `message` request should use `http://localhost:8080/api/message` and return **200**.
 
-Both services join Compose's **default network**. Docker's internal DNS turns the service name `api` into the API container's address. The frontend exposes only `127.0.0.1:8080:80`; the API has **no published host port**. `EXPOSE 5000` in its Dockerfile documents its internal port, but does not publish it.
+## 5. Check the API and logs
 
-The browser does not know the private hostname `api`. It always talks to Nginx on localhost, using the same origin as the page, so no CORS configuration is needed. Inside the web container, `localhost` would mean the web container itself, which is why Nginx uses `api:5000` instead.
+Open these browser addresses:
 
-The `resolver` in `web/nginx.conf` lets Nginx look up `api` again if Compose recreates it with a different address.
+| Address | Expected response |
+| --- | --- |
+| `http://localhost:8080/api/message` | `{"message":"Hello from the backend!"}` |
+| `http://localhost:8080/api/health` | `{"status":"UP"}` |
 
-**Optional browser check:** right-click the webpage → **Inspect** → **Network**, then click **Contact Backend** again. Select the `message` request. Its URL should be `http://localhost:8080/api/message`, status **200**, and its response should contain the backend message. Your browser never requests `http://api:5000` directly.
-
-## 5. Inspect the services and logs
-
-```text
-docker compose ps
-docker compose logs web
-docker compose logs api
-```
-
-Expect `web` to show a mapping for `127.0.0.1:8080`. `api` can show `5000/tcp`, but must not show a host mapping such as `0.0.0.0:5000->5000/tcp`.
-
-The web logs show requests to `/api/message`; API logs show requests to `/message`. Requests to `/health` also appear because of the health check. Docker Desktop groups these containers under the Compose project.
-
-## 6. Check the JSON endpoints
-
-You can open these URLs directly in your browser:
-
-```text
-http://localhost:8080/api/message
-http://localhost:8080/api/health
-```
-
-Expected JSON (spacing may vary):
-
-```json
-{"message":"Hello from the backend!"}
-```
-
-```json
-{"status":"UP"}
-```
+Or use your terminal:
 
 **Windows PowerShell:**
 
@@ -187,111 +157,78 @@ curl --fail http://localhost:8080/api/message
 curl --fail http://localhost:8080/api/health
 ```
 
-## 7. Stop the backend and observe the error
+**Show the logs:**
 
-Leave the webpage open and stop only the backend:
-
-```text
-docker compose stop api
+```bash
+docker compose logs web
+docker compose logs api
 ```
 
-Click **Contact Backend** again. **Expected:** a friendly message explaining that the backend cannot be reached. The webpage remains available because Nginx is still running. A request to `/api/message` now returns a gateway error; that is the intentional failure for this exercise.
+Expect `/api/message` in the web logs and `/message` in the API logs. The API is reached through Nginx; `localhost:5000` is not exposed.
 
-**Verify that only the backend stopped:**
+## 6. Stop the backend, then recover
 
-```text
+```bash
+docker compose stop api
 docker compose ps -a
 ```
 
-Expect `web` to be running and `api` to be exited/stopped. Clicking the button is essential: an old successful message will not change by itself when you stop the API.
+Click **Contact Backend** again. **Expected:** the page still loads, but the button displays a friendly backend-unavailable error. `web` is running and `api` is stopped.
 
-## 8. Restart the backend and recover
-
-**Start the backend again:**
-
-```text
+```bash
 docker compose start api
+docker compose ps
 ```
 
-Wait a few seconds, then click the button. **Expected:** `Hello from the backend!` returns. No page rebuild is needed. Check `docker compose ps` and the logs if the API is still starting.
+Wait a few seconds and click again. **Expected:** `Hello from the backend!` returns without rebuilding the frontend.
 
-## 9. Optional exercise — change the backend's message
+## 7. Change the backend message
 
-In `compose.yaml`, change the default message in this line:
-
-```yaml
-WELCOME_MESSAGE: "${WELCOME_MESSAGE:-Hello from the backend!}"
-```
-
-Replace that line with the following, preserving its existing indentation under `environment`:
+In `compose.yaml`, replace the `WELCOME_MESSAGE` line with this, keeping its indentation under `environment`:
 
 ```yaml
 WELCOME_MESSAGE: "${WELCOME_MESSAGE:-My two containers are talking!}"
 ```
 
-Leave the `${WELCOME_MESSAGE:-...}` structure intact. This reads an optional host environment variable and falls back to the message after `:-`.
+**Apply the change:**
 
-Apply the configuration change:
-
-```text
+```bash
+docker compose config --quiet
 docker compose up -d
 ```
 
-Click the button again. The API container is recreated to receive the new environment value. A plain `docker compose restart api` would reuse the old environment, so use `up -d` for configuration changes. If you already set a `WELCOME_MESSAGE` variable in your terminal, that value takes precedence over the default in this file.
+Click the button. **Expected:** `My two containers are talking!`
 
-**Expected:** `My two containers are talking!`. Restore the original message in `compose.yaml` and run `docker compose up -d` again if you want to repeat the lab with its original greeting.
+Use `up -d` to apply environment changes; restarting the old container alone keeps its old configuration. If your terminal already defines `WELCOME_MESSAGE`, that value overrides the default in the file.
 
-## 10. Stop and clean up
+To repeat the original greeting, restore `Hello from the backend!` in the same line and run `docker compose up -d` again.
 
-**Run from the lab folder:**
+## 8. Clean up
 
-```text
+```bash
 docker compose down
-```
-
-This removes this exercise's containers and default network, while keeping its images and your files. It leaves the root workshop and unrelated applications alone. To run the lab again, use `docker compose up -d --build` from this directory.
-
-**Check cleanup:**
-
-```text
 docker compose ps -a
 ```
 
-Expect no lab containers. If you stopped the original workshop in step 2, you can separately start it again with `docker start workshop-app` after the lab releases port 8080.
+**Expected:** no lab containers remain. Images and source files are kept. Start another session with `docker compose up -d --build` from this folder.
 
-## Success checklist
+If you stopped the original demo in step 2, you can now bring it back:
 
-- [ ] I checked out `feature/docker-compose-lab` and ran Compose from `exercises/docker-compose`.
-- [ ] `docker compose ps` showed both `web` and `api` running.
-- [ ] The page at `http://localhost:8080` displayed the backend message after I clicked **Contact Backend**.
-- [ ] `/api/message` and `/api/health` returned the expected responses through Nginx.
-- [ ] Only `web` had a published host port; `api` remained on the Compose network.
-- [ ] Stopping `api` left the page available and produced a friendly error after a click.
-- [ ] Starting `api` restored the response without rebuilding the frontend.
-- [ ] `docker compose down` removed the lab containers and network.
-
-You do not need to push code, publish images, configure GitHub Actions secrets, or create a pull request to complete this student lab.
+```bash
+docker start workshop-app
+```
 
 ## Troubleshooting
 
 | Problem | What to do |
 | --- | --- |
-| Cannot connect to Docker | Start Docker Desktop; select Linux containers on Windows. |
-| Port 8080 is already allocated | Run `docker ps`, identify your previous demo, and stop only that container before starting this lab. |
-| No configuration file found | Run `cd exercises/docker-compose` from the repository root. |
-| Button shows an error | Run `docker compose ps` and `docker compose logs api`; start a stopped API with `docker compose start api`, wait briefly, and retry. |
-| Message changes do not appear | Run `docker compose up -d` after editing the environment configuration; check for a host `WELCOME_MESSAGE` override. |
-| Backend does not open at localhost:5000 | Expected: the API is private. Use `http://localhost:8080/api/message` through Nginx. |
+| Docker engine unavailable | Start Docker Desktop; select Linux containers on Windows. |
+| Lab folder missing | Check out `feature/docker-compose-lab`, not `main`. |
+| Git reports divergent history | Stop and ask the instructor; preserve your edits and avoid force-pushing/resetting. |
+| Port 8080 is allocated | Run `docker ps`; stop only your earlier demo using that port. |
+| No Compose configuration found | Run Compose from `exercises/docker-compose`. |
+| Button shows an error | Check `docker compose ps -a` and `docker compose logs api`; start a stopped API and retry. |
+| Changed message does not appear | Run `docker compose up -d`; check for a terminal `WELCOME_MESSAGE` override. |
+| API unavailable at localhost:5000 | Expected: use `http://localhost:8080/api/message` through Nginx. |
 
-## Files to explore
-
-| File | Purpose |
-| --- | --- |
-| `compose.yaml` | Services, builds, frontend port, API environment, startup health check |
-| `web/Dockerfile` | Official Nginx image with the page and proxy configuration |
-| `web/index.html` | Blue workshop page and the small JavaScript button handler |
-| `web/nginx.conf` | Routes `/api/` over the Compose network |
-| `api/Dockerfile` | Official Python image; no dependency installation |
-| `api/server.py` | Standard-library JSON server on port 5000 |
-
-The root Dockerfile, application, validation scripts, and GitHub Actions workflow are unchanged. This lab is run locally and does not publish images to Docker Hub.
+**Lab complete:** both services ran, the button received a backend response, stopping/restarting the API showed error/recovery, and cleanup removed the lab containers. No push, publication, or pipeline configuration is required.
