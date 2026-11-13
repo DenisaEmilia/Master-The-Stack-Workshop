@@ -1,16 +1,25 @@
 name: DevOps Escape Room
 
 on:
-  push:
-    branches: ['escape/**']
   workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
+  select-branch:
+    name: Select an escape-room branch
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Explain which branch to run
+        run: |
+          echo '::notice::Use Run workflow and choose feature/devops-escape-room or your own exercise branch instead of main.'
+          echo 'Choose an escape-room branch in the Run workflow menu. The main branch only registers the workflow; exercise files live on the feature and student branches.' >> "$GITHUB_STEP_SUMMARY"
+
   escape:
     name: Escape the eight gates
+    if: github.ref != 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     defaults:
