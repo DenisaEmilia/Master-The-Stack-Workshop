@@ -1,0 +1,69 @@
+name: DevOps Escape Room
+
+on:
+  push:
+    branches: ['escape/**']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  escape:
+    name: Escape the eight gates
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        shell: bash
+        working-directory: exercises/devops-escape
+    steps:
+      - name: Check out the mission
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: 'Gate 1 — The Missing Artifact'
+        id: gate01
+        run: bash scripts/gate-01.sh
+
+      - name: 'Gate 2 — The Rubber Duck Approves Nothing'
+        id: gate02
+        run: bash scripts/gate-02.sh
+
+      - name: 'Gate 3 — The Broken Dockerfile'
+        id: gate03
+        run: bash scripts/gate-03.sh
+
+      - name: 'Gate 4 — The Server Is Alive but Unreachable'
+        id: gate04
+        run: bash scripts/gate-04.sh
+
+      - name: 'Gate 5 — The Application Is Lying'
+        id: gate05
+        run: bash scripts/gate-05.sh
+
+      - name: "Gate 6 — The Pirate's Secret Release"
+        id: gate06
+        run: bash scripts/gate-06.sh
+
+      - name: 'Gate 7 — Wrong Environment, Wrong Release'
+        id: gate07
+        run: bash scripts/gate-07.sh
+
+      - name: 'Gate 8 — Final Boss: Tag the Release Correctly'
+        id: gate08
+        run: bash scripts/gate-08.sh
+
+      - name: Mission summary and victory
+        if: always()
+        run: >-
+          bash scripts/report.sh
+          '${{ steps.gate01.outcome }}' '${{ steps.gate02.outcome }}'
+          '${{ steps.gate03.outcome }}' '${{ steps.gate04.outcome }}'
+          '${{ steps.gate05.outcome }}' '${{ steps.gate06.outcome }}'
+          '${{ steps.gate07.outcome }}' '${{ steps.gate08.outcome }}'
+
+      - name: Safely remove the challenge container
+        if: always()
+        run: bash scripts/cleanup.sh
