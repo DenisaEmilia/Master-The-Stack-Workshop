@@ -2,7 +2,7 @@
 
 ## No workflow run appears
 
-- Check `git branch --show-current`. The branch must start with `escape/`, such as `escape/alex-popescu`, to match `escape/**`. The prepared `feature/devops-escape-room` branch itself does not automatically trigger a run.
+- Check `git branch --show-current`. Student branches must start with `escape/`, such as `escape/alex-popescu`, to match `escape/**`. Pushes to the exact prepared branch `feature/devops-escape-room` also trigger a demonstration run. Other feature branch names do not match.
 - Check `git remote -v`: `origin` must point to the shared `DenisaEmilia/Master-The-Stack-Workshop` repository. Students need collaborator write access and must accept their invitation. A successful clone proves only read access; a denied push is not a pipeline defect.
 - The instructor enables Actions in the shared repository before class. After it is enabled, push another commit on your own branch (an empty “Start escape room” commit is sufficient for local Git users).
 - Confirm your branch contains `.github/workflows/devops-escape-room.yml`. Start personal branches from `feature/devops-escape-room`, not `main`. If a browser-created branch has no run, make a first file commit directly on that personal branch.

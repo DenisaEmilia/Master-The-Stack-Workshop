@@ -2,7 +2,7 @@ name: DevOps Escape Room
 
 on:
   push:
-    branches: ['escape/**']
+    branches: ['feature/devops-escape-room', 'escape/**']
   workflow_dispatch:
 
 permissions:

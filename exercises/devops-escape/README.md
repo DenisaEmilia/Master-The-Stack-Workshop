@@ -56,6 +56,8 @@ Expected: `escape/your-name` with your actual name substituted.
 
 **Why two names?** `feature/devops-escape-room` is the prepared instructor branch. Your `escape/**` branch is where you solve missions, and its name triggers the pipeline. Do not push your fixes to `main` or open a PR to `main` during the game; that belongs to the original delivery workshop.
 
+The prepared feature branch also runs the workflow when the instructor pushes to it, so the class can see the initial failure before starting. Students still solve the missions only on their personal `escape/**` branches; keep the prepared starter broken.
+
 ## 2. Start the first run
 
 The instructor enables Actions in the shared repository. **Publish only your personal branch:**

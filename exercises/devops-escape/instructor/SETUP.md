@@ -38,6 +38,19 @@ If Docker is unavailable, the harness fails its prerequisite check. Do not descr
 
 The workflow declares `workflow_dispatch` for manual runs. GitHub normally exposes the manual button/API dispatch only after the workflow is registered on the repository's default branch. `main` deliberately does not contain it yet. For this workshop, **push or commit to an `escape/**` branch** to start it. Do not change the repository's default branch or merge into `main` just to get a button.
 
+## Demonstrate the pipeline on the prepared feature branch
+
+Pushes to `feature/devops-escape-room` now also trigger **DevOps Escape Room**. To start another demonstration without repairing any starter files, use a clean checkout at the repository root:
+
+```text
+git switch feature/devops-escape-room
+git pull --ff-only origin feature/devops-escape-room
+git commit --allow-empty -m "Demonstrate escape-room starter"
+git push origin feature/devops-escape-room
+```
+
+Open **Actions → DevOps Escape Room**, filter by `feature/devops-escape-room`, and select the newest run. Expect Gate 1 to fail and Gates 2–8 to be skipped. To repeat exactly the same commit, use **Re-run all jobs** on that existing run. To demonstrate repairs, create your own `escape/instructor-demo` branch rather than fixing the prepared starter. No merge or Docker Hub publication is needed.
+
 ## Keep solutions private if required
 
 This repository's `instructor/` documents and `tests/verify_progression.py` intentionally contain complete repairs. A public repository cannot keep them secret. Student docs offer progressive hints and ask students not to read spoilers.
