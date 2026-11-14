@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8aa1486f-0905-47ea-98ef-1937266005a5" name="Changes" comment="gate 8 v4">
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/devops-escape-room" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Dari2006&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/DenisaEmilia/Master-The-Stack-Workshop.git&quot;,
+    &quot;accountId&quot;: &quot;5b36466c-a1a9-49c5-8eb4-381f7ec363cb&quot;
+  }
+}</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0158505761632628" />
+      <entry key="MS500" value="1.6363327198505424" />
+      <entry key="S2" value="2.482094948159177" />
+      <entry key="S5" value="2.772104189446348" />
+      <entry key="S10" value="2.8822599768007313" />
+      <entry key="S30" value="2.9602120223532804" />
+      <entry key="S60" value="2.9996491285251574" />
+      <entry key="M2" value="3.228169843484817" />
+      <entry key="M5" value="5.265401162206538" />
+      <entry key="M10" value="9.986361025560202" />
+      <entry key="M15" value="14.521475209371758" />
+      <entry key="M30" value="24.11954709352392" />
+      <entry key="H1" value="32.976265397667" />
+      <entry key="H2" value="39.164407441446095" />
+      <entry key="H4" value="42.8482587203677" />
+      <entry key="D1" value="46.27283882933502" />
+      <entry key="W1" value="46.89521980613003" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="0.0" />
+      <entry key="M5" value="0.0" />
+      <entry key="M10" value="0.0" />
+      <entry key="M15" value="0.0" />
+      <entry key="M30" value="0.0" />
+      <entry key="H1" value="0.0" />
+      <entry key="H2" value="0.0" />
+      <entry key="H4" value="0.0" />
+      <entry key="D1" value="0.0" />
+      <entry key="W1" value="0.0" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.03730898427063755" />
+      <entry key="MS500" value="0.918404999135274" />
+      <entry key="S2" value="2.186945819892226" />
+      <entry key="S5" value="2.639628541183774" />
+      <entry key="S10" value="2.813346290785788" />
+      <entry key="S30" value="2.936618315797189" />
+      <entry key="S60" value="2.9877715408399355" />
+      <entry key="M2" value="3.2222022267103414" />
+      <entry key="M5" value="5.262901052633892" />
+      <entry key="M10" value="9.984906921262125" />
+      <entry key="M15" value="14.520372828504625" />
+      <entry key="M30" value="24.118865668950694" />
+      <entry key="H1" value="32.9758691936086" />
+      <entry key="H2" value="39.16419082059389" />
+      <entry key="H4" value="42.848145026665" />
+      <entry key="D1" value="46.272819058460115" />
+      <entry key="W1" value="46.89521696054367" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3M5o9of4PTPARv7XYkKv4Jf3WcH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHELLCHECK.PATH": "/home/bigbob/.local/share/JetBrains/IntelliJIdea2026.2/Shell Script/shellcheck",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "feature/Darian",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/bigbob/Documents/mhp/Master-The-Stack-Workshop",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-a203e0a19954-intellij.indexing.shared.core-IU-262.10968.63" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.10968.63" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8aa1486f-0905-47ea-98ef-1937266005a5" name="Changes" comment="" />
+      <created>1794649640761</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1794649640761</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="gate 2" />
+    <MESSAGE value="gat2 2 v2" />
+    <MESSAGE value="gate 3" />
+    <MESSAGE value="gate 4" />
+    <MESSAGE value="gate 5" />
+    <MESSAGE value="gate 6" />
+    <MESSAGE value="gate 7" />
+    <MESSAGE value="gate 8" />
+    <MESSAGE value="gate 8 v2" />
+    <MESSAGE value="gate 8 v3" />
+    <MESSAGE value="gate 8 v4" />
+    <option name="LAST_COMMIT_MESSAGE" value="gate 8 v4" />
+  </component>
+</project>
