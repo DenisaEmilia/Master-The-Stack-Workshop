@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e755de6e-341d-469b-931c-102b9e555710" name="Changes" comment="" />
+    <list default="true" id="e755de6e-341d-469b-931c-102b9e555710" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,85 +18,85 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "chioreanmaria1"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;chioreanmaria1&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/DenisaEmilia/Master-The-Stack-Workshop.git",
-    "accountId": "3edb854e-6f23-4193-968b-9362cf50ee15"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/DenisaEmilia/Master-The-Stack-Workshop.git&quot;,
+    &quot;accountId&quot;: &quot;3edb854e-6f23-4193-968b-9362cf50ee15&quot;
   }
-}]]></component>
+}</component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0000000000105567" />
-      <entry key="S10" value="1.0000059420515521" />
-      <entry key="S30" value="1.0446928497442796" />
-      <entry key="S60" value="1.4234746585000406" />
-      <entry key="M2" value="2.6663822481381176" />
-      <entry key="M5" value="12.865731171321347" />
-      <entry key="M10" value="31.68986189455796" />
-      <entry key="M15" value="44.82102028905144" />
-      <entry key="M30" value="83.4871536322818" />
-      <entry key="H1" value="182.3799016096881" />
-      <entry key="H2" value="326.69129909215815" />
-      <entry key="H4" value="455.9746034607438" />
-      <entry key="D1" value="612.6340906586482" />
-      <entry key="W1" value="645.3548229374827" />
+      <entry key="MS100" value="1.0207509905795566" />
+      <entry key="MS500" value="2.2085153142584693" />
+      <entry key="S2" value="4.820179270260723" />
+      <entry key="S5" value="5.987647645098624" />
+      <entry key="S10" value="6.532923558241592" />
+      <entry key="S30" value="8.005362165590878" />
+      <entry key="S60" value="9.485574780661167" />
+      <entry key="M2" value="11.64253618961084" />
+      <entry key="M5" value="19.858494929424413" />
+      <entry key="M10" value="37.00884618796614" />
+      <entry key="M15" value="50.787629383671224" />
+      <entry key="M30" value="90.29734046975236" />
+      <entry key="H1" value="188.2836032092863" />
+      <entry key="H2" value="333.8575044575483" />
+      <entry key="H4" value="466.3966656640808" />
+      <entry key="D1" value="628.9320343637513" />
+      <entry key="W1" value="663.0985288701823" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
-      <entry key="S2" value="8.391127726839473E-134" />
-      <entry key="S5" value="5.882042156026095E-54" />
-      <entry key="S10" value="2.4252921795169534E-27" />
-      <entry key="S30" value="1.3435526466656744E-9" />
-      <entry key="S60" value="3.6654503770555624E-5" />
-      <entry key="M2" value="0.0060542963068019335" />
-      <entry key="M5" value="0.12966580752006074" />
-      <entry key="M10" value="0.3600984124965372" />
-      <entry key="M15" value="0.5065120347137994" />
-      <entry key="M30" value="0.7305907557994864" />
-      <entry key="H1" value="0.9818587521686708" />
-      <entry key="H2" value="1.2904139377439494" />
-      <entry key="H4" value="1.5682597492516788" />
-      <entry key="D1" value="1.9138326444447837" />
-      <entry key="W1" value="1.9872843553618198" />
+      <entry key="S2" value="2.0451370910748098E-185" />
+      <entry key="S5" value="1.3313399679880344E-74" />
+      <entry key="S10" value="1.1538370630154131E-37" />
+      <entry key="S30" value="4.868346655323362E-13" />
+      <entry key="S60" value="6.977353836035098E-7" />
+      <entry key="M2" value="8.353055630148218E-4" />
+      <entry key="M5" value="0.0587135242766752" />
+      <entry key="M10" value="0.242313464542259" />
+      <entry key="M15" value="0.38895019675646353" />
+      <entry key="M30" value="0.6402156499713768" />
+      <entry key="H1" value="0.9191260443471321" />
+      <entry key="H2" value="1.248510139056919" />
+      <entry key="H4" value="1.5425864429382363" />
+      <entry key="D1" value="1.9085749106912502" />
+      <entry key="W1" value="1.9865035037589394" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.5321850912266799" />
-      <entry key="MS500" value="0.88148015790717" />
-      <entry key="S2" value="0.9689539448887403" />
-      <entry key="S5" value="0.9874639603944936" />
-      <entry key="S10" value="0.993718047966468" />
-      <entry key="S30" value="1.0423368768545163" />
-      <entry key="S60" value="1.421268248318167" />
-      <entry key="M2" value="2.6699771273221917" />
-      <entry key="M5" value="12.9927307538788" />
-      <entry key="M10" value="32.04749636367997" />
-      <entry key="M15" value="45.32542758453297" />
-      <entry key="M30" value="84.21628148074542" />
-      <entry key="H1" value="183.3607092977331" />
-      <entry key="H2" value="327.98097528760655" />
-      <entry key="H4" value="457.5423999564176" />
-      <entry key="D1" value="614.5478269335581" />
-      <entry key="W1" value="647.3420929514549" />
+      <entry key="MS100" value="0.9860618318332712" />
+      <entry key="MS500" value="2.1911552092895197" />
+      <entry key="S2" value="4.810138711211742" />
+      <entry key="S5" value="5.98265510337954" />
+      <entry key="S10" value="6.530173705352743" />
+      <entry key="S30" value="8.004082953008801" />
+      <entry key="S60" value="9.484679264541299" />
+      <entry key="M2" value="11.6424201154028" />
+      <entry key="M5" value="19.915615606881847" />
+      <entry key="M10" value="37.24926342989907" />
+      <entry key="M15" value="51.17479172463248" />
+      <entry key="M30" value="90.93618111033337" />
+      <entry key="H1" value="189.20169682222266" />
+      <entry key="H2" value="335.1052760293989" />
+      <entry key="H4" value="467.9387839130023" />
+      <entry key="D1" value="630.8405110635151" />
+      <entry key="W1" value="665.0850177368459" />
     </decayedShown>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6,
-  "fromUser": false
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="3M5nti4YJ7LsVLaka4TY8nqS9QF" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -107,6 +109,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "#7 on feature/maria",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -135,5 +138,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
