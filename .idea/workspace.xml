@@ -4,32 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28f4faf2-0216-4d26-b0d5-cd896d5ae792" name="Changes" comment="" />
+    <list default="true" id="e755de6e-341d-469b-931c-102b9e555710" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="15" />
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="feature/devops-escape-room" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory"><![CDATA[{
   "lastFilter": {
     "state": "OPEN",
-    "assignee": "Arpad28"
+    "assignee": "chioreanmaria1"
   }
 }]]></component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/DenisaEmilia/Master-The-Stack-Workshop.git",
-    "accountId": "81b05921-8c6c-44a4-b270-f13a2d604a6f"
+    "accountId": "3edb854e-6f23-4193-968b-9362cf50ee15"
   }
 }]]></component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
       <entry key="MS100" value="1.0" />
@@ -53,21 +55,21 @@
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="0.0" />
-      <entry key="S10" value="0.0" />
-      <entry key="S30" value="0.0" />
-      <entry key="S60" value="0.0" />
-      <entry key="M2" value="0.0" />
-      <entry key="M5" value="0.0" />
-      <entry key="M10" value="0.0" />
-      <entry key="M15" value="0.0" />
-      <entry key="M30" value="0.0" />
-      <entry key="H1" value="0.0" />
-      <entry key="H2" value="0.0" />
-      <entry key="H4" value="0.0" />
-      <entry key="D1" value="0.0" />
-      <entry key="W1" value="0.0" />
+      <entry key="S2" value="8.391127726839473E-134" />
+      <entry key="S5" value="5.882042156026095E-54" />
+      <entry key="S10" value="2.4252921795169534E-27" />
+      <entry key="S30" value="1.3435526466656744E-9" />
+      <entry key="S60" value="3.6654503770555624E-5" />
+      <entry key="M2" value="0.0060542963068019335" />
+      <entry key="M5" value="0.12966580752006074" />
+      <entry key="M10" value="0.3600984124965372" />
+      <entry key="M15" value="0.5065120347137994" />
+      <entry key="M30" value="0.7305907557994864" />
+      <entry key="H1" value="0.9818587521686708" />
+      <entry key="H2" value="1.2904139377439494" />
+      <entry key="H4" value="1.5682597492516788" />
+      <entry key="D1" value="1.9138326444447837" />
+      <entry key="W1" value="1.9872843553618198" />
     </decayedSelected>
     <decayedShown>
       <entry key="MS100" value="0.02538288738613236" />
@@ -90,25 +92,22 @@
     </decayedShown>
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4,
+  "associatedIndex": 6,
   "fromUser": false
 }]]></component>
-  <component name="ProjectId" id="3M5o0eBFtzCabhEzit3JVWXoAYo" />
+  <component name="ProjectId" id="3M5nti4YJ7LsVLaka4TY8nqS9QF" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "escape/Arpad",
-    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Arpad Szilagyi/Master-The-Stack-Workshop",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -126,11 +125,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="28f4faf2-0216-4d26-b0d5-cd896d5ae792" name="Changes" comment="" />
-      <created>1794649568314</created>
+      <changelist id="e755de6e-341d-469b-931c-102b9e555710" name="Changes" comment="" />
+      <created>1794649513861</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1794649568314</updated>
+      <updated>1794649513861</updated>
     </task>
     <servers />
   </component>
