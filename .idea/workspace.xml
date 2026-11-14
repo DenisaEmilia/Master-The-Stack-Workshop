@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="28f4faf2-0216-4d26-b0d5-cd896d5ae792" name="Changes" comment="" />
+    <list default="true" id="a8d2664c-004a-4958-95b1-66fd36f6c1c8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,79 +18,20 @@
   <component name="GitHubPullRequestSearchHistory"><![CDATA[{
   "lastFilter": {
     "state": "OPEN",
-    "assignee": "Arpad28"
+    "assignee": "vgdaniel-17"
   }
 }]]></component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/DenisaEmilia/Master-The-Stack-Workshop.git",
-    "accountId": "81b05921-8c6c-44a4-b270-f13a2d604a6f"
+    "accountId": "8d640c38-d82c-4379-888f-85885937fd26"
   }
 }]]></component>
-  <component name="NextEditCompletionFeaturesState">
-    <decayedCancelled>
-      <entry key="MS100" value="1.0310373899259941" />
-      <entry key="MS500" value="1.9849554937302876" />
-      <entry key="S2" value="3.2457982650149964" />
-      <entry key="S5" value="3.6696254174133798" />
-      <entry key="S10" value="3.8295987085590912" />
-      <entry key="S30" value="3.9500286374351723" />
-      <entry key="S60" value="4.061278777817366" />
-      <entry key="M2" value="4.317462449015553" />
-      <entry key="M5" value="5.1651365595181575" />
-      <entry key="M10" value="7.7328052517605546" />
-      <entry key="M15" value="11.106665415110212" />
-      <entry key="M30" value="19.541317117312623" />
-      <entry key="H1" value="28.01552610354704" />
-      <entry key="H2" value="34.12781416825485" />
-      <entry key="H4" value="37.81404275737709" />
-      <entry key="D1" value="41.26476001938292" />
-      <entry key="W1" value="41.89400531214793" />
-    </decayedCancelled>
-    <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="0.0" />
-      <entry key="S10" value="0.0" />
-      <entry key="S30" value="0.0" />
-      <entry key="S60" value="0.0" />
-      <entry key="M2" value="0.0" />
-      <entry key="M5" value="0.0" />
-      <entry key="M10" value="0.0" />
-      <entry key="M15" value="0.0" />
-      <entry key="M30" value="0.0" />
-      <entry key="H1" value="0.0" />
-      <entry key="H2" value="0.0" />
-      <entry key="H4" value="0.0" />
-      <entry key="D1" value="0.0" />
-      <entry key="W1" value="0.0" />
-    </decayedSelected>
-    <decayedShown>
-      <entry key="MS100" value="0.9033839802081941" />
-      <entry key="MS500" value="1.7237555580847268" />
-      <entry key="S2" value="2.923957467159816" />
-      <entry key="S5" value="3.484786916165195" />
-      <entry key="S10" value="3.7250391798301243" />
-      <entry key="S30" value="3.912121828951236" />
-      <entry key="S60" value="4.041746273984823" />
-      <entry key="M2" value="4.307357969999592" />
-      <entry key="M5" value="5.160837365212108" />
-      <entry key="M10" value="7.730419087126041" />
-      <entry key="M15" value="11.104923995372372" />
-      <entry key="M30" value="19.54029425644254" />
-      <entry key="H1" value="28.014948218323028" />
-      <entry key="H2" value="34.12750281743313" />
-      <entry key="H4" value="37.81388054190416" />
-      <entry key="D1" value="41.26473198298505" />
-      <entry key="W1" value="41.89400128114999" />
-    </decayedShown>
-  </component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4,
+  "associatedIndex": 1,
   "fromUser": false
 }]]></component>
-  <component name="ProjectId" id="3M5o0eBFtzCabhEzit3JVWXoAYo" />
+  <component name="ProjectId" id="3M5nw6VIwdZdjaidpk5Je0IdFGc" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -104,15 +42,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHELLCHECK.PATH": "/home/vgdaniel/.local/share/JetBrains/IntelliJIdea2026.2/Shell Script/shellcheck",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "escape/Arpad",
-    "ignore.virus.scanning.warn.message": "true",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Arpad Szilagyi/Master-The-Stack-Workshop",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
+    "last_opened_file_path": "/home/vgdaniel/Code/Master-The-Stack-Workshop",
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
@@ -126,11 +60,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="28f4faf2-0216-4d26-b0d5-cd896d5ae792" name="Changes" comment="" />
-      <created>1794649568314</created>
+      <changelist id="a8d2664c-004a-4958-95b1-66fd36f6c1c8" name="Changes" comment="" />
+      <created>1794649531390</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1794649568314</updated>
+      <updated>1794649531390</updated>
     </task>
     <servers />
   </component>
