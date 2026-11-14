@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8aa1486f-0905-47ea-98ef-1937266005a5" name="Changes" comment="hdfdsj" />
+    <list default="true" id="8aa1486f-0905-47ea-98ef-1937266005a5" name="Changes" comment="green">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -155,6 +158,7 @@
     <MESSAGE value="gate 8 v3" />
     <MESSAGE value="gate 8 v4" />
     <MESSAGE value="hdfdsj" />
-    <option name="LAST_COMMIT_MESSAGE" value="hdfdsj" />
+    <MESSAGE value="green" />
+    <option name="LAST_COMMIT_MESSAGE" value="green" />
   </component>
 </project>
