@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="8aa1486f-0905-47ea-98ef-1937266005a5" name="Changes" comment="green">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,86 +14,8 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Dari2006&quot;
   }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/DenisaEmilia/Master-The-Stack-Workshop.git&quot;,
-    &quot;accountId&quot;: &quot;5b36466c-a1a9-49c5-8eb4-381f7ec363cb&quot;
   }
-}</component>
-  <component name="McpProjectServerCommands">
-    <commands />
-    <urls />
-  </component>
-  <component name="NextEditCompletionFeaturesState">
-    <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.000000000001595" />
-      <entry key="S10" value="1.0000017861729964" />
-      <entry key="S30" value="1.0203759233311953" />
-      <entry key="S60" value="1.2545145554622148" />
-      <entry key="M2" value="2.0763766202774043" />
-      <entry key="M5" value="4.650914584325897" />
-      <entry key="M10" value="9.319010777351242" />
-      <entry key="M15" value="13.879124234859558" />
-      <entry key="M30" value="24.001075452932366" />
-      <entry key="H1" value="33.803727425228864" />
-      <entry key="H2" value="40.860604819024" />
-      <entry key="H4" value="45.13106400016508" />
-      <entry key="D1" value="49.14313526617259" />
-      <entry key="W1" value="49.876425889333355" />
-    </decayedCancelled>
-    <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="0.0" />
-      <entry key="S10" value="0.0" />
-      <entry key="S30" value="0.0" />
-      <entry key="S60" value="0.0" />
-      <entry key="M2" value="0.0" />
-      <entry key="M5" value="0.0" />
-      <entry key="M10" value="0.0" />
-      <entry key="M15" value="0.0" />
-      <entry key="M30" value="0.0" />
-      <entry key="H1" value="0.0" />
-      <entry key="H2" value="0.0" />
-      <entry key="H4" value="0.0" />
-      <entry key="D1" value="0.0" />
-      <entry key="W1" value="0.0" />
-    </decayedSelected>
-    <decayedShown>
-      <entry key="MS100" value="0.9659363289248456" />
-      <entry key="MS500" value="0.9930924954370359" />
-      <entry key="S2" value="0.9982686325973925" />
-      <entry key="S5" value="0.999307092992043" />
-      <entry key="S10" value="0.9996552700995671" />
-      <entry key="S30" value="1.0202423960116942" />
-      <entry key="S60" value="1.2541796846145372" />
-      <entry key="M2" value="2.075441962550214" />
-      <entry key="M5" value="4.6497068957537016" />
-      <entry key="M10" value="9.317987014525603" />
-      <entry key="M15" value="13.878245690514492" />
-      <entry key="M30" value="24.000461386006382" />
-      <entry key="H1" value="33.80334785465485" />
-      <entry key="H2" value="40.860390844845604" />
-      <entry key="H4" value="45.1309499631674" />
-      <entry key="D1" value="49.14311518083256" />
-      <entry key="W1" value="49.876422992150744" />
-    </decayedShown>
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 7,
-  &quot;fromUser&quot;: false
-}</component>
-  <component name="ProjectId" id="3M5o9of4PTPARv7XYkKv4Jf3WcH" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -108,19 +23,11 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHELLCHECK.PATH": "/home/bigbob/.local/share/JetBrains/IntelliJIdea2026.2/Shell Script/shellcheck",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "feature/Darian",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/bigbob/Documents/mhp/Master-The-Stack-Workshop",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
@@ -134,31 +41,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8aa1486f-0905-47ea-98ef-1937266005a5" name="Changes" comment="" />
-      <created>1794649640761</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1794649640761</updated>
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="gate 2" />
-    <MESSAGE value="gat2 2 v2" />
-    <MESSAGE value="gate 3" />
-    <MESSAGE value="gate 4" />
-    <MESSAGE value="gate 5" />
-    <MESSAGE value="gate 6" />
-    <MESSAGE value="gate 7" />
-    <MESSAGE value="gate 8" />
-    <MESSAGE value="gate 8 v2" />
-    <MESSAGE value="gate 8 v3" />
-    <MESSAGE value="gate 8 v4" />
-    <MESSAGE value="hdfdsj" />
-    <MESSAGE value="green" />
-    <option name="LAST_COMMIT_MESSAGE" value="green" />
   </component>
 </project>
