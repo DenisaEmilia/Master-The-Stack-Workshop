@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="17cbf523-dae9-4ced-8c12-7ee1695df255" name="Changes" comment="Modificare" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;RaresGruia&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/DenisaEmilia/Master-The-Stack-Workshop.git&quot;,
+    &quot;accountId&quot;: &quot;4c5009e6-fa31-4d5e-b2d3-09340e31cdbd&quot;
+  }
+}</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0154098860077088" />
+      <entry key="MS500" value="1.4340701138005214" />
+      <entry key="S2" value="1.8116895809772786" />
+      <entry key="S5" value="1.9199325559017364" />
+      <entry key="S10" value="1.9591454120771643" />
+      <entry key="S30" value="2.024686142975394" />
+      <entry key="S60" value="2.276253414587477" />
+      <entry key="M2" value="3.027393782313552" />
+      <entry key="M5" value="6.764325296218439" />
+      <entry key="M10" value="12.452945239098065" />
+      <entry key="M15" value="16.467584444415962" />
+      <entry key="M30" value="23.2242820602458" />
+      <entry key="H1" value="28.5114332724508" />
+      <entry key="H2" value="31.915946104607343" />
+      <entry key="H4" value="33.8630605565025" />
+      <entry key="D1" value="35.62970714204625" />
+      <entry key="W1" value="35.94674158083003" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="0.0" />
+      <entry key="M5" value="0.0" />
+      <entry key="M10" value="0.0" />
+      <entry key="M15" value="0.0" />
+      <entry key="M30" value="0.0" />
+      <entry key="H1" value="0.0" />
+      <entry key="H2" value="0.0" />
+      <entry key="H4" value="0.0" />
+      <entry key="D1" value="0.0" />
+      <entry key="W1" value="0.0" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.9535075159472615" />
+      <entry key="MS500" value="1.4133277153198451" />
+      <entry key="S2" value="1.804646474829984" />
+      <entry key="S5" value="1.9169019841992223" />
+      <entry key="S10" value="1.9575910844620048" />
+      <entry key="S30" value="2.0238026029411795" />
+      <entry key="S60" value="2.2746895975157893" />
+      <entry key="M2" value="3.025241715486075" />
+      <entry key="M5" value="6.761789339660405" />
+      <entry key="M10" value="12.450711885667847" />
+      <entry key="M15" value="16.465710851448982" />
+      <entry key="M30" value="23.223065911619315" />
+      <entry key="H1" value="28.510729650011232" />
+      <entry key="H2" value="31.915565841565872" />
+      <entry key="H4" value="33.862862620133505" />
+      <entry key="D1" value="35.6296730030046" />
+      <entry key="W1" value="35.946736674761766" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3M5oLW4uGNKl4iNWzh34AGsr48Y" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHELLCHECK.PATH": "I do mind",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "feature/RaresGruia",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/GruiaRares/Master-The-Stack-Workshop",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-a203e0a19954-intellij.indexing.shared.core-IU-262.10968.63" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.10968.63" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="17cbf523-dae9-4ced-8c12-7ee1695df255" name="Changes" comment="" />
+      <created>1794649733361</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1794649733361</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Gate 1" />
+    <MESSAGE value="Gate 2" />
+    <MESSAGE value="Gate 3" />
+    <MESSAGE value="Gate 4" />
+    <MESSAGE value="Gate 5" />
+    <MESSAGE value="Gate 6" />
+    <MESSAGE value="Gate 7" />
+    <MESSAGE value="Gate 8" />
+    <MESSAGE value="Modificare" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modificare" />
+  </component>
+</project>
